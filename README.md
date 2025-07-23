@@ -15,7 +15,7 @@ We’ll simulate a DeFi ecosystem with the following components:
 
 The `NftMarketplace` contract uses the Uniswap-like DEX as a price oracle by relying on the reserve ratio of `cNGN/USDT` to determine the value of cNGN. The NFT price is fixed at **10 cNGN**, assuming this reflects a stable value.
 
-#### The Exploit 💀:
+### The Exploit 💀:
 
 Using a flash loan contract, we borrowed `900 cNGN` and swapped it for USDT on the DEX, drastically altering the reserve ratio:
 
@@ -76,10 +76,6 @@ Want to contribute?
 * Or any idea you have to improve this repo
 
 PRs and forks are welcome!
-
-Here’s a cleaned-up and properly formatted version of your section:
-
----
 
 ## Read and Learn More About Oracle Manipulation Hacks
 
