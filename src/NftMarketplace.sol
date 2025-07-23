@@ -2,10 +2,11 @@
 pragma solidity ^0.8.19;
 
 import {IUniswap} from "./interfaces/IUniswap.sol";
+import {INftMarketplace} from "./interfaces/INftMarketplace.sol";
 import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import {IERC20} from "aave-v3-core/contracts/dependencies/openzeppelin/contracts/IERC20.sol";
 
-contract NftMarketplace is ERC721 {
+contract NftMarketplace is INftMarketplace, ERC721 {
     IERC20 public cNGN;
     IUniswap public uniswap;
 

@@ -30,21 +30,21 @@ contract Uniswap is IUniswap {
     function swapCNGNForUSDT(uint256 cngnAmountIn) external {
         uint256 usdtAmountOut = getAmountOut(cngnAmountIn, cngnReserves, usdtReserves);
 
-        require(cngnToken.transferFrom(msg.sender, address(this), cngnAmountIn), "Transfer failed");
-        require(usdtToken.transfer(msg.sender, usdtAmountOut), "Transfer failed");
-
         cngnReserves += cngnAmountIn;
         usdtReserves -= usdtAmountOut;
+
+        require(cngnToken.transferFrom(msg.sender, address(this), cngnAmountIn), "Transfer failed");
+        require(usdtToken.transfer(msg.sender, usdtAmountOut), "Transfer failed");
     }
 
     function swapUSDTForCNGN(uint256 usdtAmountIn) external {
         uint256 cngnAmountOut = getAmountOut(usdtAmountIn, usdtReserves, cngnReserves);
 
-        require(usdtToken.transferFrom(msg.sender, address(this), usdtAmountIn), "Transfer failed");
-        require(cngnToken.transfer(msg.sender, cngnAmountOut), "Transfer failed");
-
         usdtReserves += usdtAmountIn;
         cngnReserves -= cngnAmountOut;
+
+        require(usdtToken.transferFrom(msg.sender, address(this), usdtAmountIn), "Transfer failed");
+        require(cngnToken.transfer(msg.sender, cngnAmountOut), "Transfer failed");
     }
 
     function getAmountOut(uint256 amountIn, uint256 reserveIn, uint256 reserveOut) public pure returns (uint256) {

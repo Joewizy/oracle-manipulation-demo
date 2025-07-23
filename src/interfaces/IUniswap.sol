@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 /// @title IUniswap
-/// @notice interface of a Dex insipired from Uniswap (v1) 
+/// @notice interface of a Dex insipired from Uniswap (v1)
 interface IUniswap {
     /**
      * @notice Adds liquidity to the CNGN/USDT pool.
@@ -30,11 +30,7 @@ interface IUniswap {
      * @param reserveOut The reserve of the output token.
      * @return The output token amount.
      */
-    function getAmountOut(
-        uint256 amountIn,
-        uint256 reserveIn,
-        uint256 reserveOut
-    ) external pure returns (uint256);
+    function getAmountOut(uint256 amountIn, uint256 reserveIn, uint256 reserveOut) external pure returns (uint256);
 
     /**
      * @notice Returns the price of 1 CNGN in USDT, scaled by 1e18.
